@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @account.name %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @account.info %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>
+<%= link_to 'New Spend', new_account_spend_path(@account) %>
+<h3>spends</h3>
+<%@spends.each do|spend|%>
+<%= link_to  spend.name, account_spend_path(@account,spend)%>
+<%end%>	

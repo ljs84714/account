@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Y0Meet</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= link_to "Home", root_path %>
+	 <%= unless user_sign_in?%>
+	<%= link_to  "login", new_user_session_path %>
+	<% end %>
+	<%= link_to "My Accounts",account_path  %>
+
+<%= yield %>
+
+</body>
+</html>
